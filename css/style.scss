@@ -1,0 +1,53 @@
+.stock-announcements {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+}
+
+.promotion-card {
+  background-color: #f5f5f5;
+  padding: 24px;
+  position: relative;
+
+  &__grid {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    align-items: center;
+  }
+
+  &__label {
+    display: block;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.33;
+    color: #ffffff;
+    padding: 4px 15px;
+    background: #ec008c;
+    max-width: max-content;
+    position: relative;
+    left: -24px;
+    margin-bottom: 20px;
+  }
+  &__name {
+    margin: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #131313;
+    margin-bottom: 16px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #838383;
+    margin: 0;
+    margin-bottom: 35px;
+  }
+}
