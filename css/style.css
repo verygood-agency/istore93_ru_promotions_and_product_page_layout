@@ -3,8 +3,31 @@
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  margin-bottom: 40px;
+}
+.stock-announcements__item:first-of-type {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.stock-announcements__item:first-of-type .promotion-card__grid {
+  align-items: flex-start;
+}
+.stock-announcements__item:first-of-type .promotion-card__name {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.stock-announcements__item:first-of-type .promotion-card__text {
+  font-size: 24px;
+}
+.stock-announcements__item:first-of-type .promotion-card__left {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.stock-announcements__item:first-of-type .promotion-card__button {
+  margin-top: auto;
 }
 
 .promotion-card {
@@ -15,7 +38,7 @@
 .promotion-card__grid {
   display: grid;
   gap: 0;
-  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-items: center;
 }
 .promotion-card__label {
@@ -46,4 +69,143 @@
   color: #838383;
   margin: 0;
   margin-bottom: 35px;
+}
+.promotion-card__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+}
+.promotion-card__button::after {
+  content: "";
+  margin-left: 8px;
+  display: block;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='18' height='14' fill='none'%3e%3cpath stroke='%23EC008C' stroke-width='2' d='M10.137 1 16 6.863m0 0-5.863 5.862M16 6.863H0'/%3e%3c/svg%3e");
+  width: 20px;
+  height: 16px;
+  background-repeat: no-repeat;
+}
+.promotion-card__photo img {
+  display: block;
+  width: 100%;
+}
+
+.button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  padding: 16px 20px;
+  background-color: #ec008c;
+  border-radius: 4px;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 48px;
+}
+
+.button--black {
+  background-color: #131313;
+}
+
+.center {
+  max-width: 200px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.information-block__grid {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  margin-bottom: 40px;
+}
+.information-block__left img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 232px;
+  min-width: 100%;
+}
+.information-block__label {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #838383;
+  margin: 0;
+}
+.information-block__title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.33;
+  color: #131313;
+}
+.information-block__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #131313;
+  margin-top: 0;
+}
+
+@media (max-width: 1024px) {
+  .stock-announcements__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stock-announcements__item:not(:first-of-type) .promotion-card__grid {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+  .stock-announcements__item:not(:first-of-type) .promotion-card__right {
+    grid-row-start: 1;
+  }
+  .stock-announcements__item:not(:first-of-type) .promotion-card__label {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .stock-announcements__item:first-of-type .promotion-card__text {
+    font-size: 20px;
+    font-weight: 300;
+  }
+  .stock-announcements__item:first-of-type .promotion-card__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 650px) {
+  .stock-announcements__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .stock-announcements__item:first-of-type {
+    grid-column-start: initial;
+    grid-column-end: initial;
+  }
+  .promotion-card__grid {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+  .promotion-card__right {
+    grid-row-start: 1;
+  }
+  .promotion-card__label {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    margin: 0;
+  }
+  .information-block__grid {
+    grid-template-columns: 1fr;
+  }
+  .button.center {
+    max-width: 100%;
+  }
 }
