@@ -142,8 +142,7 @@
       min-width: 100%;
     }
   }
-  &__right {
-  }
+
   &__label {
     display: block;
     font-weight: 400;
@@ -207,16 +206,59 @@
   &__photo {
   }
 }
+.slider-service-announcements {
+  position: relative;
+  overflow: hidden;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-pagination {
+    position: initial;
+    max-width: max-content;
+    margin: 0 auto;
+  }
+  .swiper-wrapper {
+    margin-bottom: 32px;
+  }
+  .promotion-card__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .swiper-slide {
+    width: 33.333%;
+  }
+  &__content {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .slider-service-announcements {
+    .promotion-card__grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;
+    }
+    .promotion-card__right {
+      grid-row-start: 1;
+    }
+    .promotion-card__label {
+      position: absolute;
+      left: 0;
+      margin-bottom: 0;
+      top: 24px;
+    }
+  }
+}
 
 @media (max-width: 1200px) {
-.detailed-service-card__grid {
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-.detailed-service-card__right {
-  grid-row-start: 1;
-  // grid-row-end: 2;
-}
+  .detailed-service-card__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .detailed-service-card__right {
+    grid-row-start: 1;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -228,14 +270,38 @@
       gap: 24px;
       grid-template-columns: 1fr;
     }
-    .promotion-card__right {
+    .stock-announcement .promotion-card__right {
       grid-row-start: 1;
     }
-    .promotion-card__label {
+    .stock-announcement .promotion-card__label {
       position: absolute;
       top: 24px;
       left: 0;
       margin: 0;
+    }
+  }
+
+  .slider-service-announcements {
+    .swiper-slide {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .promotion-card__photo img {
+      height: 232px;
+      object-fit: contain;
+    }
+    .promotion-card__grid {
+      gap: 0 !important;
+      grid-template-columns: 1fr;
+    }
+    .promotion-card__name {
+      margin-bottom: 6px;
+    }
+    .promotion-card__text {
+      margin-bottom: 8px;
+    }
+    .promotion-card__text {
+      font-weight: 300;
     }
   }
 }
@@ -280,5 +346,19 @@
   }
   .button.center {
     max-width: 100%;
+  }
+  .slider-service-announcements {
+    .promotion-card__grid {
+      gap: 24px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .slider-service-announcements {
+    .swiper-slide {
+      width: 80%;
+      // margin: 0;
+    }
   }
 }

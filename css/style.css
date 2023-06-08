@@ -185,6 +185,47 @@
   color: #838383;
   margin: 0;
 }
+.slider-service-announcements {
+  position: relative;
+  overflow: hidden;
+}
+.slider-service-announcements .swiper {
+  width: 100%;
+  height: 100%;
+}
+.slider-service-announcements .swiper-pagination {
+  position: initial;
+  max-width: max-content;
+  margin: 0 auto;
+}
+.slider-service-announcements .swiper-wrapper {
+  margin-bottom: 32px;
+}
+.slider-service-announcements .promotion-card__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+.slider-service-announcements .swiper-slide {
+  width: 33.333%;
+}
+.slider-service-announcements__content {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1440px) {
+  .slider-service-announcements .promotion-card__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .slider-service-announcements .promotion-card__right {
+    grid-row-start: 1;
+  }
+  .slider-service-announcements .promotion-card__label {
+    position: absolute;
+    left: 0;
+    margin-bottom: 0;
+    top: 24px;
+  }
+}
 @media (max-width: 1200px) {
   .detailed-service-card__grid {
     grid-template-columns: 1fr;
@@ -202,14 +243,35 @@
     gap: 24px;
     grid-template-columns: 1fr;
   }
-  .stock-announcements__item:not(:first-of-type) .promotion-card__right {
+  .stock-announcements__item:not(:first-of-type) .stock-announcement .promotion-card__right {
     grid-row-start: 1;
   }
-  .stock-announcements__item:not(:first-of-type) .promotion-card__label {
+  .stock-announcements__item:not(:first-of-type) .stock-announcement .promotion-card__label {
     position: absolute;
     top: 24px;
     left: 0;
     margin: 0;
+  }
+  .slider-service-announcements .swiper-slide {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .slider-service-announcements .promotion-card__photo img {
+    height: 232px;
+    object-fit: contain;
+  }
+  .slider-service-announcements .promotion-card__grid {
+    gap: 0 !important;
+    grid-template-columns: 1fr;
+  }
+  .slider-service-announcements .promotion-card__name {
+    margin-bottom: 6px;
+  }
+  .slider-service-announcements .promotion-card__text {
+    margin-bottom: 8px;
+  }
+  .slider-service-announcements .promotion-card__text {
+    font-weight: 300;
   }
 }
 @media (max-width: 768px) {
@@ -248,5 +310,13 @@
   }
   .button.center {
     max-width: 100%;
+  }
+  .slider-service-announcements .promotion-card__grid {
+    gap: 24px;
+  }
+}
+@media (max-width: 500px) {
+  .slider-service-announcements .swiper-slide {
+    width: 80%;
   }
 }
