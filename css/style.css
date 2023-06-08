@@ -153,6 +153,47 @@
   margin-top: 0;
 }
 
+.detailed-service-card__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+}
+.detailed-service-card__label {
+  display: block;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #ffffff;
+  padding: 4px 15px;
+  background: #ec008c;
+  max-width: max-content;
+  margin-bottom: 20px;
+}
+.detailed-service-card__name {
+  margin: 0;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.4;
+  color: #131313;
+  margin-bottom: 16px;
+}
+.detailed-service-card__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #838383;
+  margin: 0;
+}
+@media (max-width: 1200px) {
+  .detailed-service-card__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .detailed-service-card__right {
+    grid-row-start: 1;
+  }
+}
 @media (max-width: 1024px) {
   .stock-announcements__list {
     grid-template-columns: repeat(2, 1fr);
